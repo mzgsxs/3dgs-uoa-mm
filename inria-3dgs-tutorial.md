@@ -36,7 +36,7 @@ unzip tandt_db.zip
 python train.py -s ./tandt/train
 ````
 
-To see your rendering, inside windows, download and decompress their [viwer](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/binaries/viewers.zip) In powershell, cd into `PATH_TO_YOUR_DOWNLOAD_FOLDER\viewers\bin` and run something like:
+To see your rendering, inside windows, download and decompress their [viewer](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/binaries/viewers.zip) In powershell, cd into `PATH_TO_YOUR_DOWNLOAD_FOLDER\viewers\bin` and run something like:
 
 ````
 .\SIBR_gaussianViewer_app.exe -m \\wsl.localhost\Ubuntu-22.04\home\<YOUR_USER_NAME>\gaussian-splatting\output\<run-id>

@@ -1,6 +1,6 @@
 # Step-by-step tutorial for getting 3dgs running
 
-Make sure you have installed Nvidia driver (version > 530), CUDA (version > 12) and Docker. It may be a lot easier to just use Windows with WSL, as there is an existing [Pre-built Windows Binaries](https://github.com/graphdeco-inria/gaussian-splatting/tree/main?tab=readme-ov-file#pre-built-windows-binaries) so you don't have to build it yourself. But you can still follow this if you are using ubuntu 22.04 (or anyother docker compatible linux distro)
+Make sure you have installed Nvidia driver (version > 530), CUDA (version > 12) and Docker. It may be a lot easier to just use Windows with WSL, as there is an existing [Pre-built Windows Binaries for viewer](https://github.com/graphdeco-inria/gaussian-splatting/tree/main?tab=readme-ov-file#pre-built-windows-binaries) so you don't have to build it yourself. But you can still follow this if you are using ubuntu 22.04 (or anyother docker compatible linux distro) but you will have to either vuild that viewer on Linux or mount the trained model to a windows machine to use prebuilt viewer
 
 Either pull `gaetanlandreau/3d-gaussian-splatting` from you GUI docker app in Windows or run the following command in your terminal:
 
@@ -11,7 +11,7 @@ docker pull gaetanlandreau/3d-gaussian-splatting:latest
 Once you have this image pulled, clone 3dgs code into your current working directory:
 
 ````
-git clone https://github.com/graphdeco-inria/gaussian-splatting.git
+git clone --recursive https://github.com/graphdeco-inria/gaussian-splatting.git
 ````
 
 Start your docker in nvidia-runtime mode with their code mounted in container:

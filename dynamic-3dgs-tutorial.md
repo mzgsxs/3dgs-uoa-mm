@@ -12,6 +12,9 @@ Then clone dynamic 3dgs code into your current working directory:
 
 ````
 git clone --recursive https://github.com/mzgsxs/3dgs-uoa-mm.git
+cd 3dgs-uoa-mm
+git checkout d3dgs-soft-bg
+cd ..
 ````
 
 Then clone render code into your current working directory:

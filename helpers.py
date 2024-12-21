@@ -1,3 +1,8 @@
+"""
+# Copyright (C) 2023, Luiten
+
+"""
+
 import torch
 import os
 import open3d as o3d
@@ -51,6 +56,10 @@ def l1_loss_v2(x, y):
     return (torch.abs(x - y).sum(-1)).mean()
 
 
+def weighted_l1_loss_v2(x, y, w):
+    return ((torch.abs(x - y) * w).sum(-1)).mean()
+
+
 def weighted_l2_loss_v1(x, y, w):
     return torch.sqrt(((x - y) ** 2) * w + 1e-20).mean()
 
@@ -91,6 +100,12 @@ def params2cpu(params, is_initial_timestep):
     return res
 
 
+def params2cpu_all(params):
+    res = {k: v.detach().cpu().contiguous().numpy() for k, v in params.items()}
+    return res
+
+
+
 def save_params(output_params, seq, exp):
     to_save = {}
     for k in output_params[0].keys():
@@ -99,4 +114,5 @@ def save_params(output_params, seq, exp):
         else:
             to_save[k] = output_params[0][k]
     os.makedirs(f"./output/{exp}/{seq}", exist_ok=True)
-    np.savez(f"./output/{exp}/{seq}/params", **to_save)
+    np.savez(f"./output/{exp}/{seq}/params", **to_save) 
+

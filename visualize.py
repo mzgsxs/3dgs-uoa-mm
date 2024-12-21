@@ -18,14 +18,14 @@ ADDITIONAL_LINES = None  # None, 'trajectories' or 'rotations'
 # ADDITIONAL_LINES = 'rotations'  # None, 'trajectories' or 'rotations'
 
 REMOVE_BACKGROUND = False  # False or True
-# REMOVE_BACKGROUND = True  # False or True
+#REMOVE_BACKGROUND = True  # False or True
 
 FORCE_LOOP = False  # False or True
 # FORCE_LOOP = True  # False or True
 
 w, h = 640, 360
 near, far = 0.01, 100.0
-view_scale = 3.9
+view_scale = 2
 fps = 20
 traj_frac = 25  # 4% of points
 traj_length = 15
@@ -233,6 +233,8 @@ def visualize(seq, exp):
 
 
 if __name__ == "__main__":
-    exp_name = "pretrained"
-    for sequence in ["basketball", "boxes", "football", "juggle", "softball", "tennis"]:
+    #exp_name = "pretrained"
+    #for sequence in ["basketball", "boxes", "football", "juggle", "softball", "tennis"]:
+    exp_name = "exp3"
+    for sequence in ["basketball"]:
         visualize(sequence, exp_name)
